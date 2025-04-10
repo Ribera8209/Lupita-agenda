@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pose Salón - Registro de Clientes</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #000000, #f4c430);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        h1 {
+            margin-top: 10px;
+            font-size: 2em;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px #f4c430;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #f4c430;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #e0b020;
+        }
+
+        .icon-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo estética pose.png" alt="Logo Pose Salón">
+        <h1>Pose Salón</h1>
+        <p>Registro de Clientes y Gestión de Citas</p>
+    </header>
+
+    <div class="container">
+        <form id="registroForm">
+            <label for="nombre" class="icon-label"><i class="fa fa-user"></i> Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="contacto" class="icon-label"><i class="fa fa-phone"></i> Número de contacto:</label>
+            <input type="tel" id="contacto" name="contacto" required>
+
+            <label for="fecha" class="icon-label"><i class="fa fa-calendar"></i> Fecha deseada:</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <label for="hora" class="icon-label"><i class="fa fa-clock"></i> Hora deseada:</label>
+            <input type="time" id="hora" name="hora" required>
+
+            <label for="servicio" class="icon-label"><i class="fa fa-cut"></i> Tipo de servicio:</label>
+            <select id="servicio" name="servicio" required>
+                <option value="corte">Corte de cabello</option>
+                <option value="tinte">Tinte</option>
+                <option value="peinado">Peinado</option>
+                <option value="manicure">Manicure</option>
+                <option value="pedicure">Pedicure</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <button type="submit"><i class="fa fa-check"></i> Registrar cita</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('¡Cita registrada correctamente!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
